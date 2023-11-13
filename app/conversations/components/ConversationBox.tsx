@@ -8,6 +8,7 @@ import { format } from "date-fns";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import { FullConversationType } from "@/app/types";
 import Avatar from "@/app/components/Avatar";
+import AvatarGroup from "@/app/components/AvatarGroup";
 
 interface IConversationBoxProps {
   data: FullConversationType;
@@ -67,7 +68,11 @@ const ConversationBox: FC<IConversationBoxProps> = ({ data, selected }) => {
       )}
       onClick={handleClick}
     >
-      <Avatar user={otherUser} />
+      {data.isGroup ? (
+        <AvatarGroup users={data.users} />
+      ) : (
+        <Avatar user={otherUser} />
+      )}
       <div className=" mix-w-0 flex-1">
         <div className=" focus:outline-none">
           <div className=" flex justify-between mb-1 items-center">
