@@ -12,6 +12,7 @@ import useOtherUser from "@/app/hooks/useOtherUser";
 import Avatar from "@/app/components/Avatar";
 import ConfirmModal from "./ConfirmModal";
 import AvatarGroup from "@/app/components/AvatarGroup";
+import useActiveList from "@/app/hooks/useActiveList";
 
 interface IProfileDrawerProps {
   data: Conversation & {
@@ -23,6 +24,8 @@ interface IProfileDrawerProps {
 
 const ProfileDrawer: FC<IProfileDrawerProps> = ({ data, isOpen, onClose }) => {
   const otherUser = useOtherUser(data);
+  const { members } = useActiveList();
+  const isActive = members.indexOf(otherUser?.email!) !== -1;
 
   const [confirmOpen, setConfirmOpen] = useState(false);
 
@@ -39,8 +42,8 @@ const ProfileDrawer: FC<IProfileDrawerProps> = ({ data, isOpen, onClose }) => {
       return `${data.users.length} members`;
     }
 
-    return "Active";
-  }, [data]);
+    return isActive ? "Active" : "Offline";
+  }, [data, isActive]);
 
   return (
     <>

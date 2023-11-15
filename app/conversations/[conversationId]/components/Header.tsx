@@ -11,6 +11,7 @@ import useOtherUser from "@/app/hooks/useOtherUser";
 import Avatar from "@/app/components/Avatar";
 import ProfileDrawer from "./ProfileDrawer";
 import AvatarGroup from "@/app/components/AvatarGroup";
+import useActiveList from "@/app/hooks/useActiveList";
 
 interface IHeaderProps {
   conversation: Conversation & {
@@ -20,6 +21,8 @@ interface IHeaderProps {
 
 const Header: FC<IHeaderProps> = ({ conversation }) => {
   const otherUser = useOtherUser(conversation);
+  const { members } = useActiveList();
+  const isActive = members.indexOf(otherUser?.email!) !== -1;
 
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -28,8 +31,8 @@ const Header: FC<IHeaderProps> = ({ conversation }) => {
       return `${conversation.users.length} members`;
     }
 
-    return "Active";
-  }, [conversation]);
+    return isActive ? "Active" : "Offline";
+  }, [conversation, isActive]);
 
   return (
     <>
