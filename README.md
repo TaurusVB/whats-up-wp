@@ -17,8 +17,19 @@ Welcome to the WhatsUpApp repository! This project is a messaging application in
 - **Active Chats:** View a list of ongoing conversations.
 - **Group Chats:** Create and participate in group conversations.
 - **Chat Deletion:** Ability to delete individual and group chats.
+  
+ ## Technologies Used
 
-## Technologies Used
+- React
+- Tailwind CSS
+- Next.js
+- Prisma
+- MongoDB
+- NextAuth
+- Pusher
+- Vercel
+
+## Key Features:
 
 - Real-time messaging using Pusher
 - Message notifications and alerts
