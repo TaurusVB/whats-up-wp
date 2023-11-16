@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WhatsUpApp - Messenger Clone
 
-## Getting Started
+Welcome to the WhatsUpApp repository! This project is a messaging application inspired by the popular Messenger app.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- **Authentication:** Users can sign in using their GitHub or Google accounts.
+- **User Presence:** The app displays whether a user is online or offline.
+- **Profile Customization:** Users can change their nickname and avatar.
+- **Messaging:** Send and receive messages with individual users or in group chats.
+- **Read Receipts:** Check if your messages have been read by other participants.
+- **Active Chats:** View a list of ongoing conversations.
+- **Group Chats:** Create and participate in group conversations.
+- **Chat Deletion:** Ability to delete individual and group chats.
+
+## Technologies Used
+
+- Real-time messaging using Pusher
+- Message notifications and alerts
+- Tailwind design for sleek UI
+- Tailwind animations and transition effects
+- Full responsiveness for all devices
+- Credential authentication with NextAuth
+- Google authentication integration
+- Github authentication integration
+- File and image upload using Cloudinary CDN
+- Client form validation and handling using react-hook-form
+- Server error handling with react-toast
+- Message read receipts
+- Online/offline user status
+- Group chats and one-on-one messaging
+- Message attachments and file sharing
+- User profile customization and settings
+- Handling relations between Server and Child components in a real-time environment
+- Creating and managing chat rooms and channels
+
+## Installation and Setup
+
+### Cloning the repository
+
+```shell
+git clone https://github.com/TaurusVB/whats-up-wp.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install packages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+npm i
+```
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+### Setup .env file
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```js
+DATABASE_URL=
 
-## Learn More
+NEXTAUTH_SECRET=
 
-To learn more about Next.js, take a look at the following resources:
+GITHUB_ID=
+GITHUB_SECRET=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
 
-## Deploy on Vercel
+NEXT_PUBLIC_PUSHER_APP_KEY=
+PUSHER_APP_ID=
+PUSHER_SECRET=
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Start the app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```shell
+npm run dev
+```
+
+## About the Project
+
+This project was created with the guidance of a [YouTube video](https://www.youtube.com/watch?v=PGPGcKBpAk8&list=WL&index=26&ab_channel=CodeWithAntonio). provided by CodeWithAntonio. I am grateful to CodeWithAntonio and other educational resources that have taught me how to develop software and use various technologies.
+
+I always value opportunities for learning and skill improvement, and I hope that this project will be beneficial for others who also wish to learn software development.
+
+Thank you for your support and education!
