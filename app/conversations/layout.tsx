@@ -4,6 +4,11 @@ import ConversationsList from "./components/ConversationsList";
 import getConversations from "../actions/getConversations";
 import getUsers from "../actions/getUsers";
 
+export const metadata = {
+  title: "Messages | WhatsUpApp",
+  description: "User's messages and conversations",
+};
+
 export default async function ConversationsLayout({
   children,
 }: {
